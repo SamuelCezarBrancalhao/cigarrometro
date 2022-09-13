@@ -6,7 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  cigarrosPorDIa: number;
+  anosFumando: number;
+  diasPerdidos: number = 0;
 
   constructor() {}
+
+  calcular() {
+    let cigarrosPorAno = this.cigarrosPorDIa * 365;
+    let totalCigarros = cigarrosPorAno * this.anosFumando;
+    let minutosPerdidos = totalCigarros * 10;
+    let horasPerdidas = minutosPerdidos / 60;
+    this.diasPerdidos = horasPerdidas / 24;
+  }
 
 }
